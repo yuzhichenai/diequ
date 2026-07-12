@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #16213e 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+}
+
+#game-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#game-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.screen.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#start-screen h1 {
+    font-size: 72px;
+    font-weight: 200;
+    color: #fff;
+    letter-spacing: 20px;
+    text-indent: 20px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 60px rgba(255, 154, 158, 0.4);
+    animation: titleFloat 3s ease-in-out infinite;
+}
+
+#start-screen p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+button {
+    padding: 16px 48px;
+    font-size: 18px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    letter-spacing: 4px;
+    font-family: inherit;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px rgba(255, 154, 158, 0.2);
+}
+
+#hud {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 40px;
+}
+
+#hud.active {
+    pointer-events: none;
+}
+
+#score {
+    font-size: 48px;
+    font-weight: 200;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+#combo {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#combo.show {
+    opacity: 1;
+}
+
+#game-over-screen h2 {
+    font-size: 36px;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+}
+
+#final-score {
+    font-size: 72px;
+    font-weight: 200;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+#perfect-count {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+@keyframes titleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 600px) {
+    #start-screen h1 {
+        font-size: 48px;
+        letter-spacing: 12px;
+        text-indent: 12px;
+    }
+    
+    #score {
+        font-size: 36px;
+    }
+    
+    #hud {
+        padding: 24px;
+    }
+}

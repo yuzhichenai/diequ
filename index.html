@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>叠趣 v1.0.0</title>
+    <meta name="version" content="1.0.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+        
+        <div id="start-screen" class="screen active">
+            <h1>叠趣</h1>
+            <p>点击开始按钮，让方块完美落下</p>
+            <button id="start-btn" tabindex="-1">开始游戏</button>
+        </div>
+        
+        <div id="hud" class="screen">
+            <div id="score">0</div>
+            <div id="combo">x1</div>
+        </div>
+        
+        <div id="game-over-screen" class="screen">
+            <h2>游戏结束</h2>
+            <div id="final-score">0</div>
+            <p id="perfect-count">完美次数: 0</p>
+            <button id="restart-btn" tabindex="-1">再来一次</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
